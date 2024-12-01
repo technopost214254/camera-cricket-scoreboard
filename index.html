@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Access Camera</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <video id="video" autoplay playsinline></video>
+        
+        <div class="scoreboard">
+            <div class="team">
+                <img src="team-1.webp" alt="Team 1 Logo" class="team-logo">
+                <span class="player">BROWN</span>
+                <span class="score">30 (36)</span>
+                <span class="player">CAREY</span>
+                <span class="score">0 (0)</span>
+            </div>
+            <div class="match-info">
+                <span>FAL v LIO</span>
+                <span class="score-info">
+                    <strong>93/2</strong>
+                </span>
+                <span>23 overs</span>
+                <span>Run Rate: 4.04</span>
+            </div>
+            <div class="bowler-info">
+                <span class="bowler">ASHRAFUL</span>
+                <span class="bowling-stats">0-30 (6.0)</span>
+                <img src="team-2.webp" alt="Team 2 Logo" class="team-logo">
+            </div>
+        </div>
+
+        <script>
+            const video = document.getElementById('video');
+            
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+              
+              navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                  video.srcObject = stream;
+                })
+                .catch(err => {
+                  alert("Camera access was denied or not supported.");
+                });
+            } else {
+              alert("Media devices are not supported in this browser.");
+            }
+        </script>
+    </body>
+</html>

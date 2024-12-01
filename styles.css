@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.scoreboard {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #eaeaea;
+    border-top: 2px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.team, .match-info, .bowler-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.player {
+    font-weight: bold;
+}
+
+.score {
+    font-size: 14px;
+    color: #333;
+}
+
+.match-info {
+    text-align: center;
+    font-size: 14px;
+}
+
+.score-info {
+    font-size: 18px;
+    color: #e60000;
+    font-weight: bold;
+}
+
+.bowler {
+    font-weight: bold;
+}
+
+.bowling-stats {
+    font-size: 14px;
+    color: #555;
+}
+
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    object-fit: cover; /* Cover the viewport while maintaining aspect ratio */
+    z-index: -1; /* Place video behind other content */
+}
